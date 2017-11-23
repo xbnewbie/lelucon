@@ -16,4 +16,7 @@ class tanya_model extends CI_Model{
         $this->db->where('unik_id',$unik_id);
         return $this->db->get()->row();
     }
+    function update($tanya){
+        $this->db->update('tanya',$tanya);
+    }
 }

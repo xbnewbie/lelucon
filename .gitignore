@@ -14,13 +14,11 @@ application/logs/*
 */cache/*
 !*/cache/index.html
 !*/cache/.htaccess
->>>>>>> 8dce72ddc1f67adad1a93da42bda745507d98633
 
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
-<<<<<<< HEAD
 /vendor/
 
 # IDE Files
