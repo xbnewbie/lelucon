@@ -1,7 +1,7 @@
 <html>
 <head>
     <script src="<?php echo base_url();?>assets/jquery"></script>
-    <script src="<?php echo base_url();?>assets/pace.js"></script>
+    <!--<script src="<?php /*echo base_url();*/?>assets/pace.js"></script>-->
     <script src="<?php echo base_url();?>assets/app.js"></script>
     <link href="<?php echo base_url();?>assets/style.css" rel="stylesheet">
     <style type="text/css">
@@ -76,11 +76,15 @@
 <div class="lbl"> Tanya</div> <input id="tanya" class="tanya" type="text" name="tanya">
 <p>
   <center>
+      <div id="sherlock">
+          <img src="https://media.giphy.com/media/L70PmhHE2h5kY/giphy.gif">
+          Well, tunggu sebentar, buka mata mu agar bisa ku tatap jauh ke dalam hati mu.
+      </div>
       <button id="btn" class="btn">tanya parjo</button>
   </center><p>
 
   </p>
-  
+
   <div id="jawaban" class="jawaban">
 
   </div>

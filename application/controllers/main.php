@@ -26,34 +26,37 @@ class  main extends CI_Controller{
                'unik_id'=>$unik_id
             );
             $this->session->set_userdata($data);
-            $unik_id= $this->session->userdata('unik_id');
+            $this->session->userdata('unik_id');
 
         }else{
-           $unik_id= $this->session->userdata('unik_id');
+            $this->session->userdata('unik_id');
         }
 
-        echo $unik_id;
 
+        $data['unik_id']= $this->session->userdata('unik_id');
+        $this->load->view('ask',$data);
 
     }
     function ask(){
-        $data['unik_id']= $this->session->userdata('unik_id');
-        $this->load->view('ask',$data);
+
     }
 
     function requestSoal(){
-        $unik_id="24WC";
+        $unik_id=$this->session->userdata('unik_id');
         $data =$this->tanya_model->get($unik_id);
         $soal =$data->soal;
-        if(!empty($soal)){
+        if(!empty($soal) && ($data->jawab == "0")){
             $result ="00x00".$soal;
             echo $result;
+        }else{
+            echo "belum ada soal";
         }
     }
 
 
     function requestJawab(){
-        $unik_id="24WC";
+        $unik_id=$this->input->post('unik_id');
+        $unik_id = trim($unik_id);
         $data =$this->tanya_model->get($unik_id);
 
         $jawab =$data->jawab;
@@ -69,6 +72,7 @@ class  main extends CI_Controller{
     function setJawab(){
         $jawab=$this->input->post('jawab');
         $unik_id=$this->input->post('unik_id');
+        $unik_id = trim($unik_id);
         $data =$this->tanya_model->get($unik_id);
         $data->jawab=$jawab;
         $this->tanya_model->update($data);
